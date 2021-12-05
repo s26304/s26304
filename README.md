@@ -14,8 +14,8 @@ public class Main {
         wypiszDane();
         Student s2 = new Student();
         wypiszDane();}
-        
-    public static void wypiszDane(){
+
+    public static void wypiszDane() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Podaj Imię");
@@ -26,14 +26,18 @@ public class Main {
         String plec = sc.nextLine();
 
         String napis = "";
-        if (plec.equals("Mężczyzna")) napis += "Student";
-        else if (plec.equals("Kobieta")) napis += "Studentka";
+        if (plec.equals("Mężczyzna")) {
+            napis += "Student";
+        } else if (plec.equals("Kobieta")) {
+            napis += "Studentka";}
+        } else {
+            System.out.println("Błędne dane");}    
 
         System.out.println("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|" + '\n'
-        + "|" + "                              |" + '\n'
-        + "|" + napis + ": " + imie + " " + nazwisko + '\n'
-        + "|" + "                              |" +'\n'
-        + "|______________________________|");}}
+                + "|" + "                              |" + '\n'
+                + "|" + napis + ": " + imie + " " + nazwisko + '\n'
+                + "|" + "                              |" + '\n'
+                + "|______________________________|");}}
         
 //Zadanie 2
 package com.cwiczenia;
@@ -49,28 +53,24 @@ public class Main {
         kwartałRoku();
         Data d2 = new Data();
         kwartałRoku();}
-        
-    public static void kwartałRoku(){
+
+    public static void kwartałRoku() {
         Scanner sc2 = new Scanner(System.in);
 
         System.out.println("Podaj Miesiąc (1,2,3...)");
-        String miesiąc = sc2.nextLine();
+        int miesiąc = sc2.nextInt();
         System.out.println("Podaj Rok");
-        String rok = sc2.nextLine();
+        long rok = sc2.nextLong();
 
         String kwartał = "";
-        if (miesiąc.equals ("1")) kwartał += "I ";
-        else if (miesiąc.equals("2")) kwartał += "I ";
-        else if (miesiąc.equals("3")) kwartał += "I ";
-        else if (miesiąc.equals("4")) kwartał += "I ";
-        else if (miesiąc.equals("5")) kwartał += "II ";
-        else if (miesiąc.equals("6")) kwartał += "II ";
-        else if (miesiąc.equals("7")) kwartał += "II ";
-        else if (miesiąc.equals("8")) kwartał += "II ";
-        else if (miesiąc.equals("9")) kwartał += "III ";
-        else if (miesiąc.equals("10")) kwartał += "III ";
-        else if (miesiąc.equals("11")) kwartał += "III ";
-        else if (miesiąc.equals("12")) kwartał += "III ";
+        if (miesiąc >= 1 && miesiąc <= 4) {
+            kwartał += "I ";
+        } else if (miesiąc >= 5 && miesiąc <= 8) {
+            kwartał += "II ";
+        } else if (miesiąc >= 9 && miesiąc <= 12) {
+            kwartał += "III ";
+        } else {
+            System.out.println("Błędne dane");}
 
         System.out.println(miesiąc + "." + rok + " to " + kwartał + "kwartał " + rok + " roku");}}
         
@@ -83,20 +83,22 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        
         Rok r = new Rok();
 
         System.out.println("Podaj Rok");
         int rok = sc.nextInt();
         czyRokPrzestepny(rok);
         wyswietl(rok, czyRokPrzestepny(rok));}
-        
-    public static boolean czyRokPrzestepny(int rok){
-        return ((rok % 4 == 0) && (rok % 100 != 0 )) || (rok % 400 == 0);}
-        
-    public static void wyswietl(int rok, boolean czyRokPrzystepny){
-        if (czyRokPrzystepny){
-            System.out.println("Rok "+ rok + " jest przestępny");} 
-        else {System.out.println("Rok " + rok + " nie jest przestępny");}}}
+
+    public static boolean czyRokPrzestepny(int rok) {
+        return ((rok % 4 == 0) && (rok % 100 != 0)) || (rok % 400 == 0);}
+
+    public static void wyswietl(int rok, boolean czyRokPrzystepny) {
+        if (czyRokPrzystepny == true) {
+            System.out.println("Rok " + rok + " jest przestępny.");
+        } else {
+            System.out.println("Rok " + rok + " nie jest przestępny.");}}}
         
 //Zadanie 4
 package com.cwiczenia;
@@ -116,13 +118,13 @@ public class Main {
         System.out.println("Czy podane wyżej sztuki są na promocji? (Tak/Nie)");
         String promocja = sc.next();
 
-        podsumowanie(promocja,sztuki,koszt);}
-        
-    public static void podsumowanie(String promocja, int sztuki, double koszt){
-    
-        if ((promocja.equals("Tak")) && (sztuki > 10)) {
+        podsumowanie(promocja, sztuki, koszt);}
+
+    public static void podsumowanie(String promocja, int sztuki, double koszt) {
+
+        if (promocja.equals("Tak") && sztuki > 10) {
             System.out.println(koszt / 2.0);
-        } else if ((promocja.equals("Tak")) && (sztuki < 10)) {
+        } else if (promocja.equals("Tak") && sztuki < 10) {
             System.out.println(koszt);
         } else if (promocja.equals("Nie")) {
             System.out.println(koszt + (koszt * 0.1));}}}
@@ -150,15 +152,17 @@ public class Main {
         System.out.println("Podaj czas trwania drugiego utworu (sekundy):");
         int sekundy2 = sc.nextInt();
 
-        String pierwszyUtwór = tytuł1 + " " + minuty1 +":" + sekundy1;
-        String drugiUtwór = tytuł2 + " " + minuty2 +":" + sekundy2;
-        int czasTrwaniaMinuty = (minuty1+minuty2);
-        int czasTrwaniaSekundy = (sekundy1+sekundy2);
-        String czasTrwania =(czasTrwaniaMinuty + ":" + czasTrwaniaSekundy);
+        String pierwszyUtwór = tytuł1 + " " + minuty1 + ":" + sekundy1;
+        String drugiUtwór = tytuł2 + " " + minuty2 + ":" + sekundy2;
+        double czasTrwaniaMinuty = (minuty1 + minuty2);
+        double czasTrwaniaSekundy = (sekundy1 + sekundy2);
+        String czasTrwania = (czasTrwaniaMinuty * 60 + ":" + czasTrwaniaSekundy);
 
-        if ((minuty1>minuty2) && (minuty1==minuty2) || (sekundy1>sekundy2)) {System.out.println("__________________________________" + '\n' + "Utwory:" + '\n' + "1." + drugiUtwór + '\n' + "2." + pierwszyUtwór + '\n' + "Łączny czas trwania: " + czasTrwania + '\n' + "__________________________________");}
-        else if ((minuty1<minuty2) && (minuty1==minuty2) || (sekundy1<sekundy2)) {System.out.println("__________________________________" + '\n' + "Utwory:" + '\n' + "1." + pierwszyUtwór + '\n' + "2." + drugiUtwór + '\n' + "Łączny czas trwania: " + czasTrwania + '\n' + "__________________________________");}
-        else if ((minuty1==minuty2) && (sekundy1==sekundy2)) {System.out.println("__________________________________" + '\n' + "Utwory:" + '\n' + "1." + pierwszyUtwór + '\n' + "2." + drugiUtwór + '\n' +  "Łączny czas trwania: " + czasTrwania + '\n' + "__________________________________");}
-        }}
-        
-        // W jaki sposób dodać minuty z sekundami?
+        if ((minuty1 > minuty2) && (minuty1 == minuty2) || (sekundy1 > sekundy2)) {
+            System.out.println("__________________________________" + '\n' + "Utwory:" + '\n' + "1." + drugiUtwór + '\n' + "2." + pierwszyUtwór + '\n' + "Łączny czas trwania: "             + czasTrwania + '\n' + "__________________________________");
+        } else if ((minuty1 < minuty2) && (minuty1 == minuty2) || (sekundy1 < sekundy2)) {
+            System.out.println("__________________________________" + '\n' + "Utwory:" + '\n' + "1." + pierwszyUtwór + '\n' + "2." + drugiUtwór + '\n' + "Łączny czas trwania: "             + czasTrwania + '\n' + "__________________________________");
+        } else if ((minuty1 == minuty2) && (sekundy1 == sekundy2)) {
+            System.out.println("__________________________________" + '\n' + "Utwory:" + '\n' + "1." + pierwszyUtwór + '\n' + "2." + drugiUtwór + '\n' + "Łączny czas trwania: "             + czasTrwania + '\n' + "__________________________________");}}}
+
+        // Nadal źle się formatują minuty z sekunadami
