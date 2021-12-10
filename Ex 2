@@ -1,0 +1,66 @@
+//Zadanie 1
+        byte b = 77;
+        short s = 7;
+        int i = 70;
+        long l = 70707070;
+
+        float f = 17.7f;
+        double d = 270.7;
+
+        char c = 's';
+        boolean czyCimenoZaOknem = true;
+
+        String smutnaPrawda = "Ania nie ma kota";
+
+        Klient kl = new Klient();
+        kl.imie = "Jan";
+        kl.nazwisko = "Kowalski";
+        kl.wyswietlSwojeDane();
+        
+//Zadanie 2
+        float f = 5.99f;
+        char c = '&'; // char c = 38;
+        String helloWorld = "Hello World!";
+        double d = 10.5;
+        byte b = (-5);
+        boolean czyNieMaszKota = true;
+        double działanie = (3.0 + 2.0) / 5.0 * 2.0;
+        
+//Zadanie 3
+        String s = "s26304";
+        System.out.println("Hello " + s);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj swój numer indeksu (np.20300)");
+        String numerIndeksu = sc.nextLine();
+        System.out.println("Witaj s" + numerIndeksu);
+        
+//Zadanie 6
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj niewiadomą x");
+        
+
+//Zadanie 7
+
+//zadanie 8
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj smak pierwszej gałki");
+        String pierwszaGałka = sc.nextLine();
+        System.out.println("Podaj smak drugiej gałki");
+        String drugaGałka = sc.nextLine();
+        System.out.println("Podaj smak trzeciej gałki");
+        String trzeciaGałka = sc.nextLine();
+
+        System.out.println("REALIZACJA ZAMÓWIENIA" + '\n' +
+                "_______________________________" + '\n' +
+                "           " + trzeciaGałka + '\n' +
+                "           " + drugaGałka + '\n' +
+                "           " + pierwszaGałka + '\n' +
+                "         VVVVVVVVVVVVV" + '\n' +
+                "          VVVVVVVVVVV" + '\n' +
+                "           VVVVVVVVV" + '\n' +
+                "            VVVVVVV" + '\n' +
+                "             VVVVV" + '\n' +
+                "              VVV" + '\n' +
+                "               V" + '\n');
