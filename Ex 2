@@ -38,9 +38,27 @@
 //Zadanie 6
         Scanner sc = new Scanner(System.in);
         System.out.println("Podaj niewiadomą x");
+        Double x = sc.nextDouble();
+        Double działanie = (1 / (Math.pow(x, 6) + 1));
+        Double działanie2 = (1 / (Math.pow(x, 4) + 1));
+        Double działanie3 = (1 / (Math.pow(x, 2) + 1));
+        Double rozwiązanie = działanie + działanie2 + działanie3;
+        String wyrażenie = ("1/(" + x + "^6 + 1)+1/(" + x + "^4+1)+1/(" + x + "^2+1)");
+        System.out.println(wyrażenie);
+        System.out.println(rozwiązanie);
         
-
 //Zadanie 7
+       Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj niewiadomą x");
+        Double x = sc.nextDouble();
+        System.out.println("Podaj niewiadomą y");
+        Double y = sc.nextDouble();
+        Double działanie = ((Math.pow(x, 4)) + (Math.pow(x, 2)) + 2) / ((Math.pow(y, 4)) + (Math.pow(y, 2)) + 3);
+        Double działanie2 = ((Math.pow(y, 4)) + (Math.pow(y, 2)) + 8) / ((Math.pow(x, 4)) + (Math.pow(x, 2)) + 4);
+        Double rozwiązanie = działanie + działanie2;
+        String wyrażenie = "(" + x + "^4+" + x + "^2+2)/(" + y + "^4+" + y + "^2+3)+(" + y + "^4+" + y + "^2+8)/" + x + "^4+" + x + "^2+4)";
+        System.out.println(wyrażenie);
+        System.out.println(rozwiązanie);
 
 //zadanie 8
 
