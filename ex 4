@@ -1,12 +1,102 @@
 // Zadanie 1
+ public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Program służy do obliczenia pola figur:" + '\n' +
+                "1 – prostokąta" + '\n' +
+                "2 – kwadratu" + '\n' +
+                "3 – trójkąta" + '\n' +
+                "4 – rombu" + '\n' +
+                "5 – równoległoboku" + '\n' +
+                "6 – trapezu" + '\n' +
+                "Powiedz proszę, jaka figura Ciebie interesuje:");
+        int figura = sc.nextInt();
+
+        String napis = "Wybrałeś ";
+
+        switch (figura) {
+            case 1:
+                System.out.println(napis + "prostokąt");
+                break;
+            case 2:
+                System.out.println(napis + "kwadrat");
+                break;
+            case 3:
+                System.out.println(napis + "trójkąt");
+                break;
+            case 4:
+                System.out.println(napis + "romb");
+                break;
+            case 5:
+                System.out.println(napis + "równoległobok");
+                break;
+            case 6:
+                System.out.println(napis + "trapez");
+                break;
+            default:
+                System.out.println("Figura nie została wybrana");
+                break;}
+
+        if (figura == 3) {
+            System.out.println("Podaj długość podstawy dolnej: ");
+            double b = sc.nextDouble();
+            System.out.println("Podaj długość wysokości: ");
+            double h = sc.nextDouble();
+            rozwiązanie(figura, 0, b, h);
+        } else {
+            System.out.println("Podaj długość podstawy dolnej: ");
+            double b = sc.nextDouble();
+            System.out.println("Podaj długość podstawy górnej: ");
+            double a = sc.nextDouble();
+            System.out.println("Podaj długość wysokości: ");
+            double h = sc.nextDouble();
+            rozwiązanie(figura, a, b, h);}}
+
+    public static void rozwiązanie(int figura, double a, double b, double h) {
+        String napis = "Pole jest równe ";
+        switch (figura) {
+            case 1:
+                System.out.println(napis + poleProstokata(a, b));
+                break;
+            case 2:
+                System.out.println(napis + poleKwadratu(a, b));
+                break;
+            case 3:
+                System.out.println(napis + poleTrojkata(a, b, h));
+                break;
+            case 4:
+                System.out.println(napis + poleRombu(a, h));
+                break;
+            case 5:
+                System.out.println(napis + poleRownolegloboku(a, h));
+                break;
+            case 6:
+                System.out.println(napis + poleTrapezu(a, b, h));
+                break;
+            default:
+                System.out.println("Błąd");
+                break;}}
+
+    public static double poleTrapezu(double a, double b, double h) {
+        return ((a + b) * h) / 2;}
+
+    public static double poleProstokata(double a, double b) {
+        return a * b;}
+
+    public static double poleKwadratu(double a, double b) {
+        return poleProstokata(a, b);}
+
+    public static double poleTrojkata(double a, double b, double h) {
+        return poleTrapezu(a, b, h);}
+
+    public static double poleRombu(double a, double h) {
+        return a * h;}
+
+    public static double poleRownolegloboku(double a, double h) {
+        return poleRombu(a, h);}}
 
 // Zadanie 2
-package com.company;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -26,12 +116,6 @@ public class Main {
             System.out.println("Liczba " + liczba + " nie jest podzielna przez 2, 3 lub 5.");}}}
             
  // Zadanie 3
-package com.company;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -52,12 +136,6 @@ public class Main {
         } else {System.out.println("Podano błędne dane.");}}}
         
 // Zadanie 4
-package com.company;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -67,53 +145,48 @@ public class Main {
         nazwaMiesiąca(miesiąc);}
 
     public static void nazwaMiesiąca(int miesiąc) {
+        String napis = "Wspomniałeś";
         switch (miesiąc) {
             case 1:
-                System.out.println("Wspomniałeś Styczeń.");
+                System.out.println(napis + " Styczeń.");
                 break;
             case 2:
-                System.out.println("Wspomniałeś Luty.");
+                System.out.println(napis + " Luty.");
                 break;
             case 3:
-                System.out.println("Wspomniałeś Marzec.");
+                System.out.println(napis + " Marzec.");
                 break;
             case 4:
-                System.out.println("Wspomniałeś Kwiecień.");
+                System.out.println(napis + " Kwiecień.");
                 break;
             case 5:
-                System.out.println("Wspomniałeś Maj.");
+                System.out.println(napis + " Maj.");
                 break;
             case 6:
-                System.out.println("Wspomniałeś Czerwiec.");
+                System.out.println(napis + " Czerwiec.");
                 break;
             case 7:
-                System.out.println("Wspomniałeś Lipiec.");
+                System.out.println(napis + " Lipiec.");
                 break;
             case 8:
-                System.out.println("Wspomniałeś Sierpień.");
+                System.out.println(napis + " Sierpień.");
                 break;
             case 9:
-                System.out.println("Wspomniałeś Wrzesień.");
+                System.out.println(napis + " Wrzesień.");
                 break;
             case 10:
-                System.out.println("Wspomniałeś Październik.");
+                System.out.println(napis + " Październik.");
                 break;
             case 11:
-                System.out.println("Wspomniałeś Listopad.");
+                System.out.println(napis + " Listopad.");
                 break;
             case 12:
-                System.out.println("Wspomniałeś Grudzień.");
+                System.out.println(napis + " Grudzień.");
                 break;
             default:
                 System.out.println("Podano błędne dane.");}}}
                 
 // Zadanie 5
-package com.company;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -177,12 +250,6 @@ public class Main {
                 System.out.println("Podano błędne dane.");}}}
                 
 // Zadanie 6
-package com.company;
-
-import java.util.Scanner;
-
-public class Main {
-    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -201,12 +268,6 @@ public class Main {
             System.out.println(napis + liczba + " to 1.");}}}
             
 // Zadanie 7
-package com.company;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
