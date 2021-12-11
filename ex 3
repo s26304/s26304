@@ -1,12 +1,6 @@
 ### Hi there 👋
 
 //Zadanie 1
-package com.cwiczenia;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -40,12 +34,6 @@ public class Main {
                 + "|______________________________|");}}
         
 //Zadanie 2
-package com.cwiczenia;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -75,12 +63,6 @@ public class Main {
         System.out.println(miesiąc + "." + rok + " to " + kwartał + "kwartał " + rok + " roku");}}
         
 //Zadanie 3    
-package com.cwiczenia;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
@@ -101,12 +83,6 @@ public class Main {
             System.out.println("Rok " + rok + " nie jest przestępny.");}}}
         
 //Zadanie 4
-package com.cwiczenia;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -130,12 +106,6 @@ public class Main {
             System.out.println(koszt + (koszt * 0.1));}}}
             
  //Zadanie 5
- package com.cwiczenia;
-
-import java.util.Scanner;
-
-public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
