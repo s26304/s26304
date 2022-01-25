@@ -1,47 +1,53 @@
 // Work in progress 
 // Zadanie 1
-    public static int[] revert(int[] arr) {
-        int[] ar = new int[arr.length];
+        public static void revert(int[] arr) {
+        for (int i = arr.length - 1; i >= 0; i--)
+            System.out.println(arr[i]); }
 
-        for (int i = 0; i < arr.length; i++)
-            ar[arr.length - i - 1] = arr[i];
-        return ar;}
-        
 // Zadanie 2
-    public static String arrayToString(int[] arr) {
-    
-    }       
+        public static String arrayToString(int[] arr) {
+        for (int i = arr.length; i >= 0; i++) {
+            break; }
+        return Arrays.toString(arr); }
 
 //Zadanie 3
-    public static int[] getEven(int[] arr) {
-    
-    }
+    public static void getEven(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                int arr2[] = new int[arr.length];
+                arr2[i] = arr[i];
+                System.out.println(arr2[i]); }}}
     
 //Zadanie 4
     public static boolean arrayEquals(int[] arr, int[] arr2) {
-    
-    }
+        return Arrays.equals(arr, arr2); }
     
 //Zadanie 5
     public static void printArray(int[] arr) {
-        int[] ar = new int[arr.length];
-        
-        for (int i = 0; i < ar.lenght; i++) System.out.println(ar[i]);
-    
-    }
+        for (int i = 0; i < arr.length; i++)
+            System.out.println(arr[i]); }
     
 //Zadanie 6
-    public static boolean isInArray(double[] arr, double num)
-    {
-    
-    }
+     public static boolean isInArray(double[] arr, double num) {
+        boolean test = false;
+        for (double element : arr) {
+            if (element == num) {
+                test = true;
+                break; }}
+        return test; }
     
 //Zadanie 7
-    public static double getAlgebraicMean(double[] arr) {
-    
-    }
+        public static double getAlgebraicMean(double[] arr) {
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i]; }
+        double srednia = sum / arr.length;
+
+        return srednia; }
     
 //Zadanie 8
     public static boolean isIncreasing(int[] arr) {
-    
-    }                   
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i - 1] > arr[i])
+                return false; }
+        return true; }
